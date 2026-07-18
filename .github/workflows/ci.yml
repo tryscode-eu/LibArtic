@@ -1,0 +1,16 @@
+name: LibArtic CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  native:
+    uses: tryscode-eu/.github/.github/workflows/ci-native.yml@51c087f1d19766e8a1317eb402fe524fe18ca504
+    with:
+      configure-command: sudo apt-get update && sudo apt-get install --yes libsfml-dev
+      build-command: make --jobs 2
+      test-command: ""

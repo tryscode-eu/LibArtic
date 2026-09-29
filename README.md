@@ -2,6 +2,87 @@
 
 LibArtic est une bibliothèque graphique en C/C++ qui facilite la création d'applications graphiques en utilisant SFML. Elle fournit une interface en C pour interagir avec les fonctionnalités graphiques implémentées en C++.
 
+## Rôle
+
+Bibliothèque graphique C/C++ utilisée comme fondation d'exercices ou prototypes TrysCode.
+
+## Responsabilités
+
+- exposer une interface C simple autour de primitives SFML ;
+- fournir un projet de test ;
+- documenter compilation et installation locale.
+
+## Hors périmètre
+
+Ce dépôt ne déploie aucun service, ne gère aucun secret et ne remplace pas le design system web TrysCode.
+
+## Architecture
+
+LibArtic fournit une bibliothèque statique et des en-têtes consommés par des projets C/C++. Les accès réseau privés ne sont pas concernés.
+
+## Installation
+
+Compiler avec `make`, puis installer localement si nécessaire avec `sudo make install`.
+
+## Configuration
+
+La configuration se limite aux chemins de compilation et de linkage du consommateur.
+
+## Variables d'environnement
+
+Aucune variable d'environnement obligatoire n'est requise.
+
+## Commandes
+
+```sh
+make clean
+make
+```
+
+## Tests
+
+Compiler et exécuter le projet de test fourni avant publication.
+
+## API et messages
+
+L'API est l'interface C exposée par les en-têtes. Aucun message métier TrysCode n'est défini ici.
+
+## Sécurité
+
+Valider les tailles de buffers et les pointeurs côté consommateur ; ne pas intégrer de données sensibles dans les exemples.
+
+## Observabilité
+
+La bibliothèque ne produit pas de métriques. Les applications consommatrices gèrent leurs logs.
+
+## Déploiement
+
+Les changements courants partent sur `develop`; `main` reste réservé aux releases cohérentes.
+
+## Migrations
+
+Toute rupture d'ABI ou d'en-tête doit être annoncée et coordonnée avec les projets consommateurs.
+
+## Dépannage
+
+Vérifier SFML, le compilateur, les chemins d'en-têtes et le linkage de `libartic`.
+
+## Contribution
+
+Garder l'API minimale, compiler le projet de test et pousser sur `develop`.
+
+## Licence et statut
+
+Statut interne TrysCode. La licence suit la politique du dépôt parent si elle est publiée.
+
+## Propriétaire
+
+Équipe pédagogie / bibliothèques TrysCode.
+
+## Limitations
+
+La bibliothèque cible les usages graphiques simples et ne fournit pas de moteur complet.
+
 ## Caractéristiques
 
 - **Création de fenêtres graphiques** : Ouvrez facilement des fenêtres pour vos applications.
